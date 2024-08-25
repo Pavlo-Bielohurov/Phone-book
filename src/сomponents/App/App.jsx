@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 
-import ContactList from "./сomponents/ContactList/contactList";
-import ContactForm from "./сomponents/ContactForm/contactForm";
-import SearchBox from "./сomponents/SearchBox/searchBox";
-import initialContacts from "./сomponents/data/contacts.json";
+import ContactList from "../ContactList/contactList";
+import ContactForm from "../ContactForm/contactForm";
+import SearchBox from "../SearchBox/searchBox";
+import initialContacts from "../data/contacts.json";
 
 const getInitialContacts = () => {
   const savedContacts = window.localStorage.getItem("contacts");
