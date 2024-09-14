@@ -24,4 +24,9 @@
   height: fit-content;
   padding: 8px;
   align-self: center;
+  margin-left: 30px;
+}
+
+.p {
+  margin: 8px;
 }

@@ -8,11 +8,11 @@ export default function contact({ item, onDelete }) {
       <div className={css.containerData}>
         <div>
           <FaUserLarge />
-          <p>{item.name}</p>
+          <p className={css.p}>{item.name}</p>
         </div>
         <div>
           <FaPhone />
-          <p>{item.number}</p>
+          <p className={css.p}>{item.number}</p>
         </div>
       </div>
       <button className={css.button} onClick={() => onDelete(item.id)}>
