@@ -1,4 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contactsSlice";
+import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import css from "./contactForm.module.css";
 
@@ -13,13 +16,19 @@ const inputSchema = Yup.object().shape({
     .required("This field is reguired!"),
 });
 const initialValues = { username: "", usernumber: "" };
-export default function contactForm({ onAdd }) {
-  const handleSubmit = (value, acttions) => {
-    onAdd({
-      name: value.username,
-      number: value.usernumber,
-    });
-    acttions.resetForm();
+
+export default function contactForm() {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (value, actions) => {
+    dispatch(
+      addContact({
+        id: nanoid(),
+        name: value.username,
+        number: value.usernumber,
+      })
+    );
+    actions.resetForm();
   };
   return (
     <Formik
