@@ -8,7 +8,7 @@ export default function contact({ item }) {
   const dispatch = useDispatch();
 
   const handleDelite = (contact) => {
-    dispatch(deleteContact(contact.id));
+    dispatch(deleteContact(contact));
   };
 
   return (
@@ -23,8 +23,8 @@ export default function contact({ item }) {
           <p className={css.p}>{item.number}</p>
         </div>
       </div>
-      <button className={css.button} onClick={handleDelite}>
-        delet
+      <button className={css.button} onClick={() => handleDelite(item.id)}>
+        Delet
       </button>
     </li>
   );
