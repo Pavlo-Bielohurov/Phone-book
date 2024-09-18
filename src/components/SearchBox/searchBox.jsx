@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, filterSelect } from "../../redux/filtersSlice";
 
-export default function Search() {
+export default function SearchBox() {
   const dispatch = useDispatch();
   const value = useSelector(filterSelect);
 

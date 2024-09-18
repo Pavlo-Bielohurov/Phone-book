@@ -17,7 +17,7 @@ const inputSchema = Yup.object().shape({
 });
 const initialValues = { username: "", usernumber: "" };
 
-export default function contactForm() {
+export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (value, actions) => {
