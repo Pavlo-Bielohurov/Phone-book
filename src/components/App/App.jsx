@@ -6,6 +6,8 @@ import { fetchContacts } from "../../redux/contactsOps";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectError, selectLoading } from "../../redux/contactsSlice";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 
@@ -26,6 +28,7 @@ function App() {
       {loader && <Loader />}
       {error && <Error />}
       <ContactList />
+      <ToastContainer />
     </>
   );
 }
