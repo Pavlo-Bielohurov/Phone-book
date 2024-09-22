@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import { FaPhone } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 import css from "./contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 export default function Contact({ item }) {
   const dispatch = useDispatch();
 
-  const handleDelite = (contact) => {
-    dispatch(deleteContact(contact));
+  const handleDelite = () => {
+    dispatch(deleteContact(item.id));
   };
 
   return (
@@ -23,7 +24,7 @@ export default function Contact({ item }) {
           <p className={css.p}>{item.number}</p>
         </div>
       </div>
-      <button className={css.button} onClick={() => handleDelite(item.id)}>
+      <button className={css.button} onClick={handleDelite}>
         Delet
       </button>
     </li>
