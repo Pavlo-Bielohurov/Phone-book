@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsOps";
 import * as Yup from "yup";
 import css from "./contactForm.module.css";
-import { toast, ToastContainer, Bounce } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 
 const inputSchema = Yup.object().shape({
   username: Yup.string()
@@ -42,7 +42,7 @@ export default function ContactForm() {
       );
       toast.success("🎉 Contact added successfully!", {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -53,39 +53,39 @@ export default function ContactForm() {
       });
       actions.resetForm();
     }
-    return (
-      <>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleSubmit}
-          validationSchema={inputSchema}
-        >
-          <Form className={css.form}>
-            <label className={css.label} htmlFor="username">
-              Name
-            </label>
-            <Field type="text" name="username" id="username" />
-            <ErrorMessage
-              name="username"
-              component="span"
-              className={css.errorMessage}
-            />
-            <label className={css.label} htmlFor="usernumber">
-              Number
-            </label>
-            <Field type="text" name="usernumber" id="usernumber" />
-            <ErrorMessage
-              name="usernumber"
-              component="span"
-              className={css.errorMessage}
-            />
-            <button className={css.btn} type="submit">
-              Add contact
-            </button>
-          </Form>
-        </Formik>
-        <ToastContainer />
-      </>
-    );
   };
+  return (
+    <>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={inputSchema}
+      >
+        <Form className={css.form}>
+          <label className={css.label} htmlFor="username">
+            Name
+          </label>
+          <Field type="text" name="username" id="username" />
+          <ErrorMessage
+            name="username"
+            component="span"
+            className={css.errorMessage}
+          />
+          <label className={css.label} htmlFor="usernumber">
+            Number
+          </label>
+          <Field type="text" name="usernumber" id="usernumber" />
+          <ErrorMessage
+            name="usernumber"
+            component="span"
+            className={css.errorMessage}
+          />
+          <button className={css.btn} type="submit">
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+      {/* <ToastContainer /> */}
+    </>
+  );
 }
