@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsOps";
 import * as Yup from "yup";
 import css from "./contactForm.module.css";
-import { toast, Bounce } from "react-toastify";
+import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const inputSchema = Yup.object().shape({
@@ -30,14 +30,14 @@ export default function ContactForm() {
     );
     toast.success("🎉 Contact added successfully!", {
       position: "top-center",
-      autoClose: 4000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       theme: "colored",
-      transition: Bounce,
+      transition: Zoom,
     });
     actions.resetForm();
   };
@@ -51,7 +51,12 @@ export default function ContactForm() {
         <label className={css.label} htmlFor="username">
           Name
         </label>
-        <Field type="text" name="username" id="username" />
+        <Field
+          type="text"
+          name="username"
+          id="username"
+          className={css.input}
+        />
         <ErrorMessage
           name="username"
           component="span"
@@ -60,7 +65,12 @@ export default function ContactForm() {
         <label className={css.label} htmlFor="usernumber">
           Number
         </label>
-        <Field type="text" name="usernumber" id="usernumber" />
+        <Field
+          type="text"
+          name="usernumber"
+          id="usernumber"
+          className={css.input}
+        />
         <ErrorMessage
           name="usernumber"
           component="span"

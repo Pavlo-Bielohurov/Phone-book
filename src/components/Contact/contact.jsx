@@ -15,7 +15,7 @@ export default function Contact({ item }) {
   return (
     <li className={css.container}>
       <div className={css.containerData}>
-        <div>
+        <div className="">
           <FaUserLarge />
           <p className={css.p}>{item.name}</p>
         </div>

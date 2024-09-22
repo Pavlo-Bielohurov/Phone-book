@@ -23,12 +23,12 @@ function App() {
   return (
     <>
       <h1>Phonebook</h1>
+      <ToastContainer />
       <ContactForm />
       <SearchBox />
       {loader && <Loader />}
       {error && <Error />}
       <ContactList />
-      <ToastContainer />
     </>
   );
 }

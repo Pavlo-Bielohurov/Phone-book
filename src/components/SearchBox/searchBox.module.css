@@ -1,1 +1,15 @@
+.input[type="text"] {
+  width: 300px;
+  padding: 8px;
+  margin: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
 
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
