@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./UserMenu.module.css";
 import { selectUser } from "../../redux/auth/authSelectrors";
-import { logOut } from "../../redux/auth/authOps";
+import { logOut } from "../../redux/auth/operations";
 import { RiLogoutBoxLine } from "react-icons/ri";
 
 export default function UserMenu() {
