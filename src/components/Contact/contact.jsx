@@ -11,7 +11,9 @@ export default function Contact({ item }) {
   const handleDelite = () => {
     dispatch(deleteContact(item.id));
   };
-
+  if (!item || !item.name) {
+    return <div>No contact information available</div>;
+  }
   return (
     <li className={css.container}>
       <div className={css.containerData}>
