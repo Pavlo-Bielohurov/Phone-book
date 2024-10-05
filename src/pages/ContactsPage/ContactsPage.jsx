@@ -8,7 +8,7 @@ import {
 } from "../../redux/contacts/contactsSelectors";
 import { fetchContacts } from "../../redux/contacts/contactsOps";
 
-import ContactList from "../../components/Contact/contact";
+import ContactList from "../../components/ContactList/contactList";
 import ContactForm from "../../components/ContactForm/contactForm";
 import SearchBox from "../../components/SearchBox/searchBox";
 import Loader from "../../components/Loader/Loader";

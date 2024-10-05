@@ -5,8 +5,6 @@ import { selectVisibileContacts } from "../../redux/contacts/contactsSelectors";
 
 export default function ContactList() {
   const visibleContact = useSelector(selectVisibileContacts);
-  console.log(visibleContact);
-
   return (
     <>
       {visibleContact.length > 0 ? (
